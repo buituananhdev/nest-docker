@@ -28,7 +28,7 @@ jobs:
 #        run: pnpm test
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-1.amazonaws.com/sgroup-devops:latest .
+        run: docker build -t sgroup-devops .
 
       - name: Login to Amazon ECR
         id: login-ecr
