@@ -71,7 +71,7 @@ jobs:
             sudo docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-1.amazonaws.com/sgroup-devops:latest
             sudo docker stop sgroup-devops-container || true
             sudo docker rm sgroup-devops-container || true
-            sudo docker run -d --name sgroup-devops-container -p 3000:3000 -e DATABASE_URL=mongodb+srv://123456Aa:123456Aa@cluster1.uz4xvge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1 ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-southeast-1.amazonaws.com/sgroup-devops:latest
+            sudo docker run -d --name sgroup-devops-container -p 3000:3000 -e DATABASE_URL="mongodb+srv://123456Aa:123456Aa@cluster1.uz4xvge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1" 034062533582.dkr.ecr.ap-southeast-1.amazonaws.com/sgroup-devops:latest
 
       - name: Clean up SSH key file
         if: always()
